@@ -4,8 +4,6 @@
 
 
 
-
-
 local X = 0
 local Y = 0
 
