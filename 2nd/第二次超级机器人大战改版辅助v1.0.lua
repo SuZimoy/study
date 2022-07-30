@@ -1,5 +1,11 @@
 ---@diagnostic disable: undefined-global
 
+
+
+
+
+
+
 local X = 0
 local Y = 0
 
@@ -312,20 +318,20 @@ local function ourDamage(ourId, weponId, enemyId)
 
   if weponId == 1 then
 
-    if tableEnemyBodyType[enemyId] == 0 or tableEnemyBodyType[enemyId] == 20 then --�?
+    if tableEnemyBodyType[enemyId] == 0 or tableEnemyBodyType[enemyId] == 20 then
       return tableOurBodyWepon1_air[ourId] - tableEnemyBodyDefense[enemyId] * 1.5
-    elseif tableEnemyBodyType[enemyId] == 1 or tableEnemyBodyType[enemyId] == 5 then --�?
+    elseif tableEnemyBodyType[enemyId] == 1 or tableEnemyBodyType[enemyId] == 5 then
       return tableOurBodyWepon1_land[ourId] - tableEnemyBodyDefense[enemyId] * 1.5
-    elseif tableEnemyBodyType[enemyId] == 2 then --�?
+    elseif tableEnemyBodyType[enemyId] == 2 then
       return tableOurBodyWepon1_sea[ourId] - tableEnemyBodyDefense[enemyId] * 1.5
     end
 
   elseif weponId == 2 then
-    if tableEnemyBodyType[enemyId] == 0 or tableEnemyBodyType[enemyId] == 20 then --�?
+    if tableEnemyBodyType[enemyId] == 0 or tableEnemyBodyType[enemyId] == 20 then
       return tableOurBodyWepon2_air[ourId] - tableEnemyBodyDefense[enemyId] * 1.5
-    elseif tableEnemyBodyType[enemyId] == 1 or tableEnemyBodyType[enemyId] == 5 then --�?
+    elseif tableEnemyBodyType[enemyId] == 1 or tableEnemyBodyType[enemyId] == 5 then
       return tableOurBodyWepon2_land[ourId] - tableEnemyBodyDefense[enemyId] * 1.5
-    elseif tableEnemyBodyType[enemyId] == 2 then --�?
+    elseif tableEnemyBodyType[enemyId] == 2 then
       return tableOurBodyWepon2_sea[ourId] - tableEnemyBodyDefense[enemyId] * 1.5
     end
   end
@@ -335,13 +341,13 @@ end
 local function enemyDamage(ourId, enemyId)
   local val1 = 0
   local val2 = 0
-  if tableOurBodyType[ourId] == 0 or tableOurBodyType[ourId] == 20 then --�?
+  if tableOurBodyType[ourId] == 0 or tableOurBodyType[ourId] == 20 then
     val1 = tableEnemyBodyWepon1_air[enemyId] - tableOurBodyDefense[ourId] * 1.5
     val2 = tableEnemyBodyWepon2_air[enemyId] - tableOurBodyDefense[ourId] * 1.5
-  elseif tableOurBodyType[ourId] == 1 or tableOurBodyType[ourId] == 5 then --�?
+  elseif tableOurBodyType[ourId] == 1 or tableOurBodyType[ourId] == 5 then
     val1 = tableEnemyBodyWepon1_land[enemyId] - tableOurBodyDefense[ourId] * 1.5
     val2 = tableEnemyBodyWepon2_land[enemyId] - tableOurBodyDefense[ourId] * 1.5
-  elseif tableOurBodyType[ourId] == 2 then --�?
+  elseif tableOurBodyType[ourId] == 2 then
     val1 = tableEnemyBodyWepon1_sea[enemyId] - tableOurBodyDefense[ourId] * 1.5
     val2 = tableEnemyBodyWepon2_sea[enemyId] - tableOurBodyDefense[ourId] * 1.5
   end
@@ -371,8 +377,6 @@ local function compareXY(x, y, numVal, tablex, tabley)
   end
   return false
 end
-
-
 
 local function byte2bin(n)
   local t = {}
@@ -425,10 +429,6 @@ local function tableToNum(table)
   end
   return temp[1], temp[2], temp[3], temp[4]
 end
-
-
-
-
 
 while true do
   X = memory.readbyte(0x00c0)
